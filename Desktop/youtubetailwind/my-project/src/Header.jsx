@@ -8,8 +8,8 @@ const Header = () => {
         <img className='h-8 mx-5' src="https://preview.redd.it/accurate-recreation-of-the-new-youtube-logo-v0-l8divibm8dxd1.png?width=1080&crop=smart&auto=webp&s=1eae35ce4367dc1bdff820374e0089a8ecefd39f" alt="youtube-logo" />
     </div>
    
-    <div className=' col-span-10'><input className='w-1/2 mx-auto border-2 h-8 rounded-l-2xl' type="text" />
-    <button className='bg-gray-500 h-8 text-white rounded-r-2xl'>Search</button></div>
+    <div className=' col-span-10'><input className='w-1/2 m-auto border-2 h-8 rounded-l-2xl px-4' type="text" />
+    <button className='bg-gray-500 h-8 text-white rounded-r-2xl px-4'>Search</button></div>
     <div className='col-span-1'><img className='h-8' src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user-icon" /></div>
     </div>
   )
