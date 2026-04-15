@@ -352,16 +352,16 @@
 
 //REDUCE
 
-const arr = [5, 1, 3, 2, 4, 6]
+// const arr = [5, 1, 3, 2, 4, 6]
 
-const output = arr.reduce(function (max, curr) {
-  if (curr > max) {
-    max = curr
-  }
-  return max
-}, 0)
+// const output = arr.reduce(function (max, curr) {
+//   if (curr > max) {
+//     max = curr
+//   }
+//   return max
+// }, 0)
 
-console.log(output)
+// console.log(output)
 // using non-functional way means without using reduce function
 
 //find the sum of the array
@@ -459,12 +459,12 @@ console.log(output)
 
 // // first name all the peoples whos age is < 20 using reduce
 
-let students = [
-  { name: 'arshi', rollNo: 35, marks: 40 },
-  { name: 'mohsin', rollNo: 15, marks: 30 },
-  { name: 'mustafa', rollNo: 53, marks: 20 },
-  { name: 'aalim', rollNo: 18, marks: 41 },
-]
+// let students = [
+//   { name: 'arshi', rollNo: 35, marks: 40 },
+//   { name: 'mohsin', rollNo: 15, marks: 30 },
+//   { name: 'mustafa', rollNo: 53, marks: 20 },
+//   { name: 'aalim', rollNo: 18, marks: 41 },
+// ]
 
 //1.print the name of the students in capital letter
 
@@ -520,11 +520,92 @@ let students = [
 // Ans: Filter removes the unrequired elements while creating a new array and only includes the ones necessary. Therefore, the length of the new array is usually lesser than that of the original one.
 
 
-function close(){
-  for(let i =1; i<=5;i++){
-    setTimeout(()=>{
-     console.log(i)
-    },i * 1000)
-  }
+// function close(){
+//   for(var i =1;i <=5;i++){
+//     function closest(x){
+// setTimeout(()=>{
+// console.log(x)
+//   },x*1000)
+//     }
+  
+//     closest(i);
+//   }
+// }
+// close()
+
+
+const arr=[5,1,3,2,6,18,35,90];
+// const output=arr.map((x)=>x*2);
+// console.log(output)
+
+// function triple(x){
+//   return x*3
+// }
+
+// const output =arr.map(triple)
+// console.log(output)
+
+
+// function binary(x){
+//   return x.toString(2)
+// }
+// const output =arr.map(binary)
+// console.log(output)
+
+// function maxNumber(arr){
+//   let max =0;
+//   for(let i =0;i <arr.length;i++){
+//     if(arr[i] > max){
+//     max=arr[i];
+//     }
+//   }
+//   return max;
+// }
+// console.log(maxNumber(arr))
+
+const maxNum =arr.reduce((acc,curr,i)=>{
+
+if(acc > curr){
+  curr =acc;
 }
-close()
+return curr;
+},0)
+
+console.log(maxNum)
+
+
+// function Sum(arr){
+//   let sum =0;
+
+//   for(let i =0;i<arr.length;i++){
+//   sum=sum + arr[i];
+//   }
+//   return sum;
+// }
+// console.log(Sum(arr))
+
+const Students=[
+  {firstName:"Izzu",lastName:"mohad",age:5},
+  {firstName:"aalim",lastName:"mohad",age:8},
+  {firstName:"Mohsin",lastName:"mohammed",age:30},
+  {firstName:"Arshi",lastName:"tabassum",age:30},
+]
+
+// const output=Students.map((x)=>x.firstName + " "+x.lastName)
+// console.log(output)
+
+
+// const output =Students.filter((x)=>x.age <30).map((x)=>x.firstName)
+// console.log(output)
+
+// const output =Students.reduce(function(max,curr){
+// if(max[curr.age]){
+//   max[curr.age]=++max[curr.age];
+// }
+// else{
+//   max[curr.age]=1
+// }
+// return max;
+// },{})
+// console.log(output)
+
