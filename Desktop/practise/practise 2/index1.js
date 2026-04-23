@@ -534,44 +534,44 @@
 // close()
 
 
-const arr=[5,1,3,2,6,18,35,90];
-// const output=arr.map((x)=>x*2);
-// console.log(output)
+// const arr=[5,1,3,2,6,18,35,90];
+// // const output=arr.map((x)=>x*2);
+// // console.log(output)
 
-// function triple(x){
-//   return x*3
+// // function triple(x){
+// //   return x*3
+// // }
+
+// // const output =arr.map(triple)
+// // console.log(output)
+
+
+// // function binary(x){
+// //   return x.toString(2)
+// // }
+// // const output =arr.map(binary)
+// // console.log(output)
+
+// // function maxNumber(arr){
+// //   let max =0;
+// //   for(let i =0;i <arr.length;i++){
+// //     if(arr[i] > max){
+// //     max=arr[i];
+// //     }
+// //   }
+// //   return max;
+// // }
+// // console.log(maxNumber(arr))
+
+// const maxNum =arr.reduce((acc,curr,i)=>{
+
+// if(acc > curr){
+//   curr =acc;
 // }
+// return curr;
+// },0)
 
-// const output =arr.map(triple)
-// console.log(output)
-
-
-// function binary(x){
-//   return x.toString(2)
-// }
-// const output =arr.map(binary)
-// console.log(output)
-
-// function maxNumber(arr){
-//   let max =0;
-//   for(let i =0;i <arr.length;i++){
-//     if(arr[i] > max){
-//     max=arr[i];
-//     }
-//   }
-//   return max;
-// }
-// console.log(maxNumber(arr))
-
-const maxNum =arr.reduce((acc,curr,i)=>{
-
-if(acc > curr){
-  curr =acc;
-}
-return curr;
-},0)
-
-console.log(maxNum)
+// console.log(maxNum)
 
 
 // function Sum(arr){
@@ -609,3 +609,170 @@ const Students=[
 // },{})
 // console.log(output)
 
+// const output =Students.filter((x)=>x.age < 30).map((x)=>x.firstName)
+// console.log(output)
+
+// const arr1 =[2,5,3,4,7];
+// const outMap=arr1.forEach((x)=>x + 2)
+// console.log(outMap)
+
+// let Stud =[
+//   {name:"piyush",rollno:31,marks:80},
+//   {name:"jenny",rollno:15,marks:69},
+//   {name:"kaushal",rollno:16,marks:35},
+//   {name:"Dilpreet",rollno:7,marks:55},
+ 
+
+// ];
+
+// const output =Stud.map((x)=>x.name.toUpperCase())
+// console.log(output);
+
+
+// pollyfill for forEach Method:
+
+const arrfor=[1,2,3,4];
+// const out=arrfor.forEach((el)=> console.log(el))
+
+// function arrf(el){
+// console.log(el)
+// }
+
+// Array.prototype.myforEach=function (cb){
+
+// for(let i=0;i< this.length;i++){
+//  cb(this[i])
+// }
+// }
+
+// arrfor.myforEach(arrf)
+
+// const out=arrfor.map((el)=>el *2)
+// console.log(out)
+
+
+// Array.prototype.myMap=function (cb) {
+
+//   let res =[];
+//   for(let i =0;i <this.length;i++){
+//     res.push(cb(this[i]))
+//   }
+//   return res;
+// }
+
+// const outMap=arrfor.myMap((el)=>el *2)
+// console.log(outMap)
+
+// const outFilter =arrfor.filter((el)=>el > 2)
+// console.log(outFilter)
+
+// const outReduce =arrfor.reduce((acc,cur)=>{
+//   return acc +cur;
+// },0)
+
+// console.log(outReduce)
+// Array.prototype.myFilter=function (cb){
+// let res =[];
+// for(let i =0;i <this.length;i++){
+//  if(cb(this[i])){
+
+//    res.push(this[i])
+//  }
+// }
+// return res;
+// }
+
+
+
+// const fil=arrfor.myFilter((el)=>el > 2)
+// console.log(fil)
+
+// Array.prototype.myReduce =function (cb,initialValue){
+//   let acc =initialValue;
+//   console.log(acc)
+//    for(let i =0 ;i <this.length;i++){
+//     acc =acc ? cb(acc,this[i]) :this[i]
+//     console.log(acc)
+//    }
+//    return acc;
+
+// }
+
+// const output =arrfor.myReduce((acc,curr)=>{
+//   return acc + curr
+// },0)
+
+// console.log( output )
+
+
+
+// call apply n bind methods
+
+
+let object ={
+  name:"Arshi",
+  age:26,
+  
+}
+let printfullObject= function (hometown,state,country){
+  console.log(`${this.name} && ${this.age} && ${hometown} && ${state} && ${country}`)
+  }
+// printfullObject.call(object,"shimoga","karnataka")
+
+let object2 ={
+  name:"mohssin",
+  age:29,
+
+}
+
+// printfullObject.apply(object2,["shimoga","karnataka"])
+
+// let printObject =printfullObject.bind(object,"india")
+// // console.log(printObject)
+// printObject()
+
+//pollyfill for call
+
+// Function.prototype.myCall=function (obj={},...args){
+//   if(typeof this !== "function"){
+//     throw new Error("not callable")
+//   }
+//   obj.fn=this;
+//   obj.fn(...args);
+
+
+
+// }
+
+// printfullObject.myCall(object ,"bengaluru","kar","india")
+
+// pollyfill for Apply
+
+// Function.prototype.myApply=function (obj={},...args){
+// if(typeof this !== "function"){
+//   throw new Error("not callable")
+  
+// }
+// if(!Array.isArray(...args)){
+//   throw new Error("TypeError: CreateListFromArrayLike called on non-object")
+// } 
+// obj.fn=this;
+// obj.fn(...args)
+
+// }
+
+// printfullObject.myApply(object2,["hubli"])
+
+// Function.prototype.myBind =function (obj={},...args1){
+// if(typeof this !== "function"){
+//   throw new Error("not callable");
+// }
+// obj.fn=this;
+//   return function (...args2){
+//  obj.fn(...args1,...args2)
+//   }
+
+// }
+
+// let printObject = printfullObject.myBind(object,"karnataka")
+// printObject("gurodi")
