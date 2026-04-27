@@ -777,25 +777,57 @@ let object2 ={
 // let printObject = printfullObject.myBind(object,"karnataka")
 // printObject("gurodi")
 
-const arr=[1,2,[[3,4]]];
-// const output=arr.flat(2);//depth  of the array by default depth will be 1
-// console.log(output)//returns new copy of the array
+// const arr=[1,2,[[3,4]]];
+// // const output=arr.flat(2);//depth  of the array by default depth will be 1
+// // console.log(output)//returns new copy of the array
 
-Array.prototype.myFlat =function (depth){
-let res =[];
-if(!Array.isArray(this)){
-  throw new Error("flat is not a function")
-}
-this.forEach((el)=>{
-  if(Array.isArray(el) && depth > 0){
-    res.push(...el.myFlat(depth-1))
-  }
-  else{
-    res.push(el)
-  }
-})
-return res;
+// Array.prototype.myFlat =function (depth){
+// let res =[];
+// if(!Array.isArray(this)){
+//   throw new Error("flat is not a function")
+// }
+// this.forEach((el)=>{
+//   if(Array.isArray(el) && depth > 0){
+//     res.push(...el.myFlat(depth-1))
+//   }
+//   else{
+//     res.push(el)
+//   }
+// })
+// return res;
 
-}
-const output=arr.myFlat(2)
-console.log(output)
+// }
+// const output=arr.myFlat(2)
+// console.log(output)
+
+// promises
+
+
+// console.log("start")
+// const pr =new Promise((resolve,reject)=>{
+//   if(10 < 4){
+//     resolve("success")
+//   }
+//   else{
+//     reject("Error")
+//   }
+// }).then((data)=>{
+//     console.log(data)
+//   }).catch((err)=>{
+//     console.log(err)
+//   })
+//   return pr;
+//   console.log("ended")
+
+
+  // const handlePro =async function(){
+  //   const data =await fetch("https://dummyjson.com/users");
+  //   const json =await data.json()
+  //   console.log(json)
+
+  // }
+  // handlePro();
+
+  const url="https://dummyjson.com/users";
+
+const response =fetch(url).then((res)=>console.log(res)).catch((err)=>console.log(err))
